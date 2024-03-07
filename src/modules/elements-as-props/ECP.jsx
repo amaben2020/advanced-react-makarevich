@@ -17,8 +17,6 @@ const SlowComponents = () => {
 
 const ScrollableComponent = ({ content }) => {
   const [position, setPosition] = useState(0);
-
-  console.log("content", content);
   const handleScroll = (e) => {
     setPosition(e.currentTarget.scrollTop);
   };
