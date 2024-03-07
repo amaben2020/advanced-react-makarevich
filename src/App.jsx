@@ -1,3 +1,4 @@
+import ElementsAsChildren from "./modules/elements-as-children/ECP";
 import ElementsAsProps from "./modules/elements-as-props/ECP";
 import MovingStateDown from "./modules/moving-state-down/MSD";
 
@@ -28,10 +29,24 @@ export default function App() {
       >
         <p>
           {" "}
-          Element children as props and rerenders: A performance enhancement
-          technique that enables us pass Heavy components as props
+          Element as props and rerenders: A performance enhancement technique
+          that enables us pass Heavy components as props
         </p>
         <ElementsAsProps />
+      </div>
+
+      <div
+        style={{
+          border: "1px solid red",
+          padding: 20,
+        }}
+      >
+        <p>
+          {" "}
+          Element as children and rerenders: A performance enhancement technique
+          that enables us pass Heavy components as props
+        </p>
+        <ElementsAsChildren />
       </div>
     </>
   );
