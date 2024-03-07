@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { AnotherVerySlowComponent } from "../../components/very-slow-component";
 
@@ -40,7 +41,7 @@ const ScrollableComponent = ({ content }) => {
   );
 };
 
-export default function ElementsChildrenProps() {
+export default function ElementsAsProps() {
   return (
     <div>
       <ScrollableComponent content={<SlowComponents />} />
