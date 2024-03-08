@@ -1,10 +1,28 @@
+/* eslint-disable react/prop-types */
+import CButton from "./modules/configuration/Button";
+import ModalDialog from "./modules/configuration/ModalDialog";
+import RenderProps from "./modules/configuration/render-props";
 import ElementsAsChildren from "./modules/elements-as-children/ECP";
 import ElementsAsProps from "./modules/elements-as-props/ECP";
 import MovingStateDown from "./modules/moving-state-down/MSD";
 
+const Footer = ({ message }) => (
+  <div
+    style={{
+      background: "black",
+    }}
+  >
+    {message}
+  </div>
+);
+
 export default function App() {
   return (
-    <>
+    <section
+      style={{
+        padding: 30,
+      }}
+    >
       <div
         style={{
           border: "1px solid red",
@@ -20,7 +38,6 @@ export default function App() {
         </p>
         <MovingStateDown />
       </div>
-
       <div
         style={{
           border: "1px solid red",
@@ -34,7 +51,6 @@ export default function App() {
         </p>
         <ElementsAsProps />
       </div>
-
       <div
         style={{
           border: "1px solid red",
@@ -48,6 +64,27 @@ export default function App() {
         </p>
         <ElementsAsChildren />
       </div>
-    </>
+      <div>
+        <p>Passing element as props </p>
+        <CButton icon={"🥳"} />
+      </div>
+      <div>
+        <ModalDialog footer={<Footer />}>
+          <form action="">
+            <input type="text" />
+            <input type="text" />
+          </form>
+        </ModalDialog>
+      </div>
+      <div>
+        <p>
+          Render-props: A function that returns an element. This is a way of
+          sharing state between the Parent and Child. The props passed from
+          Parent can be invoked inside the Child.
+        </p>
+
+        <RenderProps element={({ message }) => <div>{message}</div>} />
+      </div>
+    </section>
   );
 }
