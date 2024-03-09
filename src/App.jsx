@@ -4,6 +4,11 @@ import ModalDialog from "./modules/configuration/ModalDialog";
 import RenderProps from "./modules/configuration/render-props";
 import ElementsAsChildren from "./modules/elements-as-children/ECP";
 import ElementsAsProps from "./modules/elements-as-props/ECP";
+import { HOCButton } from "./modules/higher-order-components/HocButton";
+import withLoggingOnClick from "./modules/higher-order-components/withLoggingOnClick";
+import withLoggingOnMount from "./modules/higher-order-components/withLoggingOnMount";
+import withSuppressKeyPress from "./modules/higher-order-components/withSuppressKeyPress";
+
 import MovingStateDown from "./modules/moving-state-down/MSD";
 
 const Footer = ({ message }) => (
@@ -17,6 +22,19 @@ const Footer = ({ message }) => (
 );
 
 export default function App() {
+  // const hocBtn = withButton(HOCButton)({
+  //   title: "This is a HOC Button",
+  // });
+
+  const ButtonWithSegmentTracker = withLoggingOnClick(HOCButton)({
+    log: (data) => alert(data),
+    title: "Segment Tracker",
+  });
+
+  const ButtonWithLogger = withLoggingOnMount(HOCButton);
+
+  const SuppressKeyPress = withSuppressKeyPress(ModalDialog);
+
   return (
     <section
       style={{
@@ -84,6 +102,18 @@ export default function App() {
         </p>
 
         <RenderProps element={({ message }) => <div>{message}</div>} />
+      </div>
+
+      <div>{ButtonWithSegmentTracker}</div>
+      <div>{ButtonWithLogger}</div>
+
+      <div>
+        <SuppressKeyPress footer={<Footer />}>
+          <form action="">
+            <input type="text" />
+            <input type="text" />
+          </form>
+        </SuppressKeyPress>
       </div>
     </section>
   );
