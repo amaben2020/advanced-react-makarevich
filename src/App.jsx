@@ -11,6 +11,7 @@ import withSuppressKeyPress from "./modules/higher-order-components/withSuppress
 
 import MovingStateDown from "./modules/moving-state-down/MSD";
 import DomRefs from "./modules/ref";
+import { Counter } from "./modules/ref/previousState";
 
 const Footer = ({ message }) => (
   <div
@@ -119,6 +120,8 @@ export default function App() {
 
       <div>
         <DomRefs />
+
+        <Counter />
       </div>
     </section>
   );

@@ -2,6 +2,12 @@ import { useEffect, useRef } from "react";
 
 const DomRefs = () => {
   const ref = useRef(null);
+  const ref2 = useRef(null);
+
+  useEffect(() => {
+    ref2.current = ref2.current + 1;
+    console.log("Render number", ref2.current);
+  });
 
   const handleChange = (e) => {
     ref.current = e.target.value;
