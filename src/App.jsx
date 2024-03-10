@@ -10,6 +10,7 @@ import withLoggingOnMount from "./modules/higher-order-components/withLoggingOnM
 import withSuppressKeyPress from "./modules/higher-order-components/withSuppressKeyPress";
 
 import MovingStateDown from "./modules/moving-state-down/MSD";
+import DomRefs from "./modules/ref";
 
 const Footer = ({ message }) => (
   <div
@@ -114,6 +115,10 @@ export default function App() {
             <input type="text" />
           </form>
         </SuppressKeyPress>
+      </div>
+
+      <div>
+        <DomRefs />
       </div>
     </section>
   );
