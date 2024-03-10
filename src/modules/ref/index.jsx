@@ -3,6 +3,10 @@ import { useEffect, useRef } from "react";
 const DomRefs = () => {
   const ref = useRef(null);
 
+  const handleChange = (e) => {
+    ref.current = e.target.value;
+  };
+
   useEffect(() => {
     if (ref.current) {
       console.log(ref.current);
@@ -14,10 +18,19 @@ const DomRefs = () => {
     }
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(ref.current);
+  };
+
   return (
     <div>
       DomRefs
-      <input type="text" ref={ref} />
+      <form action="" onSubmit={handleSubmit}>
+        <input type="text" ref={ref} onChange={handleChange} />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
