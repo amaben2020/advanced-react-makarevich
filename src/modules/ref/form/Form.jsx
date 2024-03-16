@@ -19,6 +19,8 @@ const FormWithUseImperativeHandle = () => {
       <label htmlFor="">FormWithUseImperativeHandle</label>
 
       <InputWithUseImperativeHandle parentRef={inputRef} setName={setName} />
+
+      <button type="submit">Submit</button>
     </form>
   );
 };

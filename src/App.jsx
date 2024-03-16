@@ -11,6 +11,7 @@ import withSuppressKeyPress from "./modules/higher-order-components/withSuppress
 
 import MovingStateDown from "./modules/moving-state-down/MSD";
 import DomRefs from "./modules/ref";
+import FormWithUseImperativeHandle from "./modules/ref/form/Form";
 import { Counter } from "./modules/ref/previousState";
 
 const Footer = ({ message }) => (
@@ -122,6 +123,10 @@ export default function App() {
         <DomRefs />
 
         <Counter />
+      </div>
+
+      <div>
+        <FormWithUseImperativeHandle />
       </div>
     </section>
   );
