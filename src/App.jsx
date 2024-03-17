@@ -2,6 +2,7 @@
 import CButton from "./modules/configuration/Button";
 import ModalDialog from "./modules/configuration/ModalDialog";
 import RenderProps from "./modules/configuration/render-props";
+import DebounceAndThrottle from "./modules/debounce";
 import ElementsAsChildren from "./modules/elements-as-children/ECP";
 import ElementsAsProps from "./modules/elements-as-props/ECP";
 import { HOCButton } from "./modules/higher-order-components/HocButton";
@@ -117,12 +118,15 @@ export default function App() {
 
       <div>
         <DomRefs />
-
         <Counter />
       </div>
 
       <div>
         <FormWithUseImperativeHandle />
+      </div>
+
+      <div>
+        <DebounceAndThrottle />
       </div>
     </section>
   );
