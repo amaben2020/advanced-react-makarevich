@@ -12,22 +12,3 @@ const withLoggingOnClick = (Component) => (props) => {
 };
 
 export default withLoggingOnClick;
-
-// export const withLoggingOnClickWithProps = (Component) => {
-//   // it will be in the props here, just extract it
-//   return ({ logText, ...props }) => {
-//   const onClick = () => {
-//   // and then just use it here
-//   console.log('Log on click: ', logText);
-//   props.onClick();
-//   };
-//   return <Component {...props} onClick={onClick} />;
-//   }; };
-
-{
-  /* <ButtonWithLoggingOnClickWithProps
- onClick={onClickCallback}
- logText="this is Page button" >
- Click me
-</ButtonWithLoggingOnClickWithProps> */
-}

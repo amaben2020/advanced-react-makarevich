@@ -25,10 +25,6 @@ const Footer = ({ message }) => (
 );
 
 export default function App() {
-  // const hocBtn = withButton(HOCButton)({
-  //   title: "This is a HOC Button",
-  // });
-
   const ButtonWithSegmentTracker = withLoggingOnClick(HOCButton)({
     log: (data) => alert(data),
     title: "Segment Tracker",
