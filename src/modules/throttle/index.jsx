@@ -1,5 +1,5 @@
+import throttle from "lodash.throttle";
 import { useState } from "react";
-
 const CARDS = [
   {
     name: "One",
@@ -19,6 +19,13 @@ const Throttle = () => {
   const handleClick = (id) => {
     setResult((p) => [...p, id]);
   };
+
+  // invokes the next call after the time elapses
+  const throttledHandleClick = throttle(handleClick, 5000, {
+    leading: false,
+    trailing: true,
+  });
+
   return (
     <div className="mt-4 border">
       <h2>Throttling</h2>
@@ -27,7 +34,7 @@ const Throttle = () => {
         {CARDS.map((item) => (
           <ul className="p-3 border   w-[300px]" key={item.id}>
             <li
-              onClick={() => handleClick(item.id)}
+              onClick={() => throttledHandleClick(item.id)}
               className="hover:cursor-pointer"
             >
               {" "}
