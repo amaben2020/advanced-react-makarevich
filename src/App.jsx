@@ -14,6 +14,7 @@ import MovingStateDown from "./modules/moving-state-down/MSD";
 import DomRefs from "./modules/ref";
 import FormWithUseImperativeHandle from "./modules/ref/form/Form";
 import { Counter } from "./modules/ref/previousState";
+import Throttle from "./modules/throttle";
 
 const Footer = ({ message }) => (
   <div
@@ -127,6 +128,10 @@ export default function App() {
 
       <div>
         <DebounceAndThrottle />
+      </div>
+
+      <div>
+        <Throttle />
       </div>
     </section>
   );

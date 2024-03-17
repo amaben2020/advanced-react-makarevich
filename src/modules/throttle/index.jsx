@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const CARDS = [
   {
     name: "One",
@@ -13,13 +15,27 @@ const CARDS = [
   },
 ];
 const Throttle = () => {
+  const [result, setResult] = useState([]);
+  const handleClick = (id) => {
+    setResult((p) => [...p, id]);
+  };
   return (
-    <div>
+    <div className="mt-4 border">
       <h2>Throttling</h2>
-
-      {CARDS.map((item) => (
-        <div key={item.id}>{item.name}</div>
-      ))}
+      <div className="flex gap-3">
+        {JSON.stringify(result)}
+        {CARDS.map((item) => (
+          <ul className="p-3 border   w-[300px]" key={item.id}>
+            <li
+              onClick={() => handleClick(item.id)}
+              className="hover:cursor-pointer"
+            >
+              {" "}
+              {item.name}{" "}
+            </li>
+          </ul>
+        ))}
+      </div>
     </div>
   );
 };
