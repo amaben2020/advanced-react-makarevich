@@ -32,13 +32,12 @@ const Throttle = () => {
       <div className="flex gap-3">
         {JSON.stringify(result)}
         {CARDS.map((item) => (
-          <ul className="p-3 border   w-[300px]" key={item.id}>
+          <ul className="p-3 border w-[300px]" key={item.id}>
             <li
               onClick={() => throttledHandleClick(item.id)}
               className="hover:cursor-pointer"
             >
-              {" "}
-              {item.name}{" "}
+              {item.name}
             </li>
           </ul>
         ))}
