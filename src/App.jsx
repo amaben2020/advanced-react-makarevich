@@ -13,6 +13,7 @@ import withSuppressKeyPress from "./modules/higher-order-components/withSuppress
 import MovingStateDown from "./modules/moving-state-down/MSD";
 import DomRefs from "./modules/ref";
 import FormWithUseImperativeHandle from "./modules/ref/form/Form";
+import MenuApp from "./modules/ref/menu-items/MenuComponent";
 import { Counter } from "./modules/ref/previousState";
 import Throttle from "./modules/throttle";
 
@@ -132,6 +133,11 @@ export default function App() {
 
       <div>
         <Throttle />
+      </div>
+
+      <div>
+        <h2>UseLayoutEffect vs useEffect</h2>
+        <MenuApp />
       </div>
     </section>
   );
