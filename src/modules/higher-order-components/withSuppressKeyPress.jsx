@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 /* eslint-disable react/display-name */
 const withSuppressKeyPress = (Component) => (props) => {
@@ -8,10 +8,10 @@ const withSuppressKeyPress = (Component) => (props) => {
   };
 
   useEffect(() => {
-    addEventListener("keypress", keyPressListener);
+    addEventListener('keypress', keyPressListener);
 
     return () => {
-      removeEventListener("keypress", keyPressListener);
+      removeEventListener('keypress', keyPressListener);
     };
   }, []);
 

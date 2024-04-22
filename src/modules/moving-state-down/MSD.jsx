@@ -1,7 +1,7 @@
-import ButtonWithModal from "../../components/ButtonWithModal";
-import { ModalDialog } from "../../components/basic-modal-dialog";
-import useToggle from "../../components/hooks/useToggle";
-import { AnotherVerySlowComponent } from "../../components/very-slow-component";
+import ButtonWithModal from '../../components/ButtonWithModal';
+import { ModalDialog } from '../../components/basic-modal-dialog';
+import useToggle from '../../components/hooks/useToggle';
+import { AnotherVerySlowComponent } from '../../components/very-slow-component';
 
 export default function MovingStateDown() {
   // add some state: whenever you see state, just know that everything inside that component would be recreated when it changes. The state is not needed by the other components asides for the button, so move it there
@@ -9,7 +9,10 @@ export default function MovingStateDown() {
 
   return (
     <div>
-      <button onClick={handleIsOpen}> Open Dialog Slow</button>
+      <button onClick={handleIsOpen} className="p-3 bg-green-500 border">
+        {' '}
+        Open Dialog Slow
+      </button>
       {isOpen ? <ModalDialog onClose={handleIsOpen} /> : null}
       <ButtonWithModal />
       <AnotherVerySlowComponent />
